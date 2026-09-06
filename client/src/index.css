@@ -1,0 +1,471 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #0B0F19;
+    --card-bg: rgba(17, 24, 39, 0.70);
+    --card-border: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism Components */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 41, 59, 0.75);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(56, 189, 248, 0.12);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Glowing Weather Ambience Backdrops */
+.ambient-glow-sunny {
+  background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.18) 0%, transparent 65%);
+}
+
+.ambient-glow-rainy {
+  background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.20) 0%, transparent 65%);
+}
+
+.ambient-glow-storm {
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.22) 0%, transparent 65%);
+}
+
+.ambient-glow-cloudy {
+  background: radial-gradient(circle at 50% 0%, rgba(148, 163, 184, 0.15) 0%, transparent 65%);
+}
+
+/* ============================================================ */
+/* Light Mode Adaptations                                      */
+/* ============================================================ */
+html.light {
+  --bg-main: #F1F5F9;
+  --card-bg: rgba(255, 255, 255, 0.90);
+  --card-border: rgba(203, 213, 225, 0.8);
+}
+
+html.light body {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light header,
+html.light footer {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+html.light footer {
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light footer .footer-nav-link {
+  color: #475569 !important;
+}
+
+html.light footer .footer-nav-link:hover {
+  color: #0284C7 !important;
+}
+
+/* Authentic Social Brand Hover Colors in Light Mode */
+html.light .social-icon-github:hover {
+  color: #0F172A !important;
+  background-color: #E2E8F0 !important;
+  border-color: #94A3B8 !important;
+}
+
+html.light .social-icon-twitter:hover {
+  color: #0284C7 !important;
+  background-color: rgba(2, 132, 199, 0.12) !important;
+  border-color: rgba(2, 132, 199, 0.35) !important;
+}
+
+html.light .social-icon-instagram:hover {
+  color: #E1306C !important;
+  background-color: rgba(225, 48, 108, 0.12) !important;
+  border-color: rgba(225, 48, 108, 0.35) !important;
+}
+
+html.light .social-icon-facebook:hover {
+  color: #1877F2 !important;
+  background-color: rgba(24, 119, 242, 0.12) !important;
+  border-color: rgba(24, 119, 242, 0.35) !important;
+}
+
+html.light .social-icon-linkedin:hover {
+  color: #0A66C2 !important;
+  background-color: rgba(10, 102, 194, 0.12) !important;
+  border-color: rgba(10, 102, 194, 0.35) !important;
+}
+
+html.light .social-icon-youtube:hover {
+  color: #DC2626 !important;
+  background-color: rgba(220, 38, 38, 0.12) !important;
+  border-color: rgba(220, 38, 38, 0.35) !important;
+}
+
+/* Authentic Social Brand Hover Colors in Dark Mode */
+.social-icon-github:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.social-icon-twitter:hover {
+  color: #38BDF8 !important;
+  background-color: rgba(56, 189, 248, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+.social-icon-instagram:hover {
+  color: #F472B6 !important;
+  background-color: rgba(244, 114, 182, 0.15) !important;
+  border-color: rgba(244, 114, 182, 0.35) !important;
+}
+
+.social-icon-facebook:hover {
+  color: #60A5FA !important;
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+.social-icon-linkedin:hover {
+  color: #60A5FA !important;
+  background-color: rgba(96, 165, 250, 0.15) !important;
+  border-color: rgba(96, 165, 250, 0.35) !important;
+}
+
+.social-icon-youtube:hover {
+  color: #FB7185 !important;
+  background-color: rgba(251, 113, 133, 0.15) !important;
+  border-color: rgba(251, 113, 133, 0.35) !important;
+}
+
+html.light footer .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light footer .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* AI Markdown Content Typography in Light Mode */
+html.light .ai-markdown-content p,
+html.light .ai-markdown-content li {
+  color: #334155 !important;
+}
+
+html.light .ai-markdown-content strong,
+html.light .ai-markdown-content h1,
+html.light .ai-markdown-content h2,
+html.light .ai-markdown-content h3 {
+  color: #0F172A !important;
+}
+
+html.light .ai-markdown-content code {
+  background-color: #E2E8F0 !important;
+  color: #0369A1 !important;
+}
+
+html.light .ai-markdown-content blockquote {
+  border-left-color: #0284C7 !important;
+  color: #475569 !important;
+}
+
+html.light .brand-logo-text {
+  background: linear-gradient(135deg, #0F172A 0%, #0284C7 60%, #4F46E5 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .bg-slate-950,
+html.light [class*="bg-slate-950/"],
+html.light .bg-slate-950\/30,
+html.light .bg-slate-950\/40,
+html.light .bg-slate-950\/50,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/95 {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light .bg-slate-900,
+html.light [class*="bg-slate-900/"],
+html.light .bg-slate-900\/30,
+html.light .bg-slate-900\/40,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90 {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/10,
+html.light .bg-white\/15 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: #E2E8F0 !important;
+}
+
+html.light .text-white {
+  color: #0F172A !important;
+}
+
+html.light .text-slate-100 {
+  color: #1E293B !important;
+}
+
+html.light .text-slate-200 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-300 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-400 {
+  color: #64748B !important;
+}
+
+/* Light Theme High-Contrast Accent Tokens */
+html.light .text-cyan-300,
+html.light .text-cyan-400 {
+  color: #0284C7 !important;
+}
+
+html.light .text-indigo-300,
+html.light .text-indigo-400 {
+  color: #4F46E5 !important;
+}
+
+html.light .text-amber-300,
+html.light .text-amber-400 {
+  color: #D97706 !important;
+}
+
+html.light .text-orange-300,
+html.light .text-orange-400 {
+  color: #EA580C !important;
+}
+
+html.light .text-sky-200,
+html.light .text-sky-300 {
+  color: #0284C7 !important;
+}
+
+html.light .text-rose-300,
+html.light .text-rose-400 {
+  color: #E11D48 !important;
+}
+
+html.light .text-emerald-300,
+html.light .text-emerald-400 {
+  color: #059669 !important;
+}
+
+html.light .ambient-glow-sunny {
+  background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, #F1F5F9 70%) !important;
+}
+
+html.light .ambient-glow-rainy {
+  background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.12) 0%, #F1F5F9 70%) !important;
+}
+
+html.light .ambient-glow-storm {
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, #F1F5F9 70%) !important;
+}
+
+html.light .ambient-glow-cloudy {
+  background: radial-gradient(circle at 50% 0%, rgba(148, 163, 184, 0.12) 0%, #F1F5F9 70%) !important;
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.4);
+}
+
+/* Leaflet map container fix */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  z-index: 10;
+  background-color: #0f172a !important;
+}
+
+/* ============================================================ */
+/* Weather Background Animations                               */
+/* ============================================================ */
+
+/* Rain Animation */
+@keyframes rainDrop {
+  0% {
+    transform: translateY(-20px) translateX(0px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(280px) translateX(-25px);
+    opacity: 0;
+  }
+}
+
+.raindrop {
+  position: absolute;
+  top: -10px;
+  width: 1.5px;
+  height: 22px;
+  background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.8), rgba(255, 255, 255, 0.9));
+  border-radius: 9999px;
+  animation: rainDrop linear infinite;
+  pointer-events: none;
+}
+
+/* Thunderstorm Lightning Flash */
+@keyframes lightningFlash {
+  0%, 88%, 92%, 100% {
+    opacity: 0;
+  }
+  89% {
+    opacity: 0.45;
+    background: radial-gradient(circle at 40% 20%, rgba(192, 132, 252, 0.6) 0%, rgba(59, 130, 246, 0.3) 50%, transparent 80%);
+  }
+  90% {
+    opacity: 0.1;
+  }
+  91% {
+    opacity: 0.6;
+    background: radial-gradient(circle at 60% 15%, rgba(255, 255, 255, 0.8) 0%, rgba(168, 85, 247, 0.4) 40%, transparent 80%);
+  }
+}
+
+.lightning-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: lightningFlash 6s ease-in-out infinite;
+}
+
+/* Cloud Drift Animations */
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(-15%) translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateX(20%) translateY(-6px) scale(1.05);
+  }
+  100% {
+    transform: translateX(-15%) translateY(0px) scale(1);
+  }
+}
+
+@keyframes cloudDriftFast {
+  0% {
+    transform: translateX(25%) translateY(0px) scale(1.1);
+  }
+  50% {
+    transform: translateX(-10%) translateY(4px) scale(1);
+  }
+  100% {
+    transform: translateX(25%) translateY(0px) scale(1.1);
+  }
+}
+
+.cloud-layer-1 {
+  animation: cloudDriftSlow 32s ease-in-out infinite alternate;
+}
+
+.cloud-layer-2 {
+  animation: cloudDriftFast 24s ease-in-out infinite alternate;
+}
+
+/* Snow Falling Animation */
+@keyframes snowDrop {
+  0% {
+    transform: translateY(-20px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(280px) translateX(25px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(0.5px);
+  animation: snowDrop linear infinite;
+  pointer-events: none;
+}
+
