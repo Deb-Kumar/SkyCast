@@ -11,35 +11,30 @@ const SOCIAL_LINKS = [
   },
   {
     name: 'Twitter (X)',
-    href: 'https://twitter.com',
+    href: 'https://x.com/payradevkumar',
     icon: Twitter,
     className: 'hover:text-sky-400 hover:bg-sky-500/10 hover:border-sky-500/30'
   },
   {
     name: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://instagram.com/alexx_285',
     icon: Instagram,
     className: 'hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-500/30'
   },
   {
     name: 'Facebook',
-    href: 'https://facebook.com',
+    href: 'https://www.facebook.com/payradebkumar',
     icon: Facebook,
     className: 'hover:text-blue-400 hover:bg-blue-600/10 hover:border-blue-600/30'
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/debkumar-payra/',
     icon: Linkedin,
     className: 'hover:text-sky-300 hover:bg-sky-600/10 hover:border-sky-500/30'
-  },
-  {
-    name: 'YouTube',
-    href: 'https://youtube.com',
-    icon: Youtube,
-    className: 'hover:text-rose-400 hover:bg-rose-500/10 hover:border-rose-500/30'
   }
 ];
+
 
 const FOOTER_LINKS = [
   { label: 'About Platform', to: '/about' },

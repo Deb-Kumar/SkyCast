@@ -116,12 +116,11 @@ export const ContactUs = () => {
                 <p className="text-[11px] font-semibold text-slate-400 mb-2">Connect Across Networks</p>
                 <div className="flex flex-wrap items-center gap-2">
                   {[
-                    { name: 'GitHub', href: 'https://github.com', icon: Github, className: 'social-icon-github hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/20' },
-                    { name: 'Twitter (X)', href: 'https://twitter.com', icon: Twitter, className: 'social-icon-twitter hover:text-sky-500 dark:hover:text-sky-400 hover:bg-sky-500/10 hover:border-sky-500/30' },
-                    { name: 'Instagram', href: 'https://instagram.com', icon: Instagram, className: 'social-icon-instagram hover:text-pink-500 dark:hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-500/30' },
-                    { name: 'Facebook', href: 'https://facebook.com', icon: Facebook, className: 'social-icon-facebook hover:text-blue-600 dark:hover:text-blue-500 hover:bg-blue-600/10 hover:border-blue-600/30' },
-                    { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin, className: 'social-icon-linkedin hover:text-blue-500 dark:hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/30' },
-                    { name: 'YouTube', href: 'https://youtube.com', icon: Youtube, className: 'social-icon-youtube hover:text-rose-500 dark:hover:text-rose-400 hover:bg-rose-500/10 hover:border-rose-500/30' }
+                    { name: 'GitHub', href: 'https://github.com/Deb-Kumar/SkyCast', icon: Github, className: 'social-icon-github hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/20' },
+                    { name: 'Twitter (X)', href: 'https://x.com/payradevkumar', icon: Twitter, className: 'social-icon-twitter hover:text-sky-500 dark:hover:text-sky-400 hover:bg-sky-500/10 hover:border-sky-500/30' },
+                    { name: 'Instagram', href: 'https://instagram.com/alexx_285', icon: Instagram, className: 'social-icon-instagram hover:text-pink-500 dark:hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-500/30' },
+                    { name: 'Facebook', href: 'https://www.facebook.com/payradebkumar', icon: Facebook, className: 'social-icon-facebook hover:text-blue-600 dark:hover:text-blue-500 hover:bg-blue-600/10 hover:border-blue-600/30' },
+                    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/debkumar-payra/', icon: Linkedin, className: 'social-icon-linkedin hover:text-blue-500 dark:hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/30' }
                   ].map((s) => {
                     const Icon = s.icon;
                     return (
