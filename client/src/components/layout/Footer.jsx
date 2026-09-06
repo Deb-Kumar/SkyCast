@@ -17,7 +17,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: 'Instagram',
-    href: 'https://instagram.com/alexx_285',
+    href: 'https://instagram.com/alexx__285',
     icon: Instagram,
     className: 'hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-500/30'
   },
@@ -32,6 +32,12 @@ const SOCIAL_LINKS = [
     href: 'https://www.linkedin.com/in/debkumar-payra/',
     icon: Linkedin,
     className: 'hover:text-sky-300 hover:bg-sky-600/10 hover:border-sky-500/30'
+  },
+  {
+    name: 'YouTube',
+    href: 'https://youtube.com/@alexxxgmr',
+    icon: Youtube,
+    className: 'hover:text-rose-400 hover:bg-rose-500/10 hover:border-rose-500/30'
   }
 ];
 
