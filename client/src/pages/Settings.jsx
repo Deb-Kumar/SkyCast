@@ -288,7 +288,7 @@ export const Settings = () => {
         )}
 
         {/* 2. Meteorological Measurement Units */}
-        <div className="glass-panel p-6 rounded-3xl space-y-5">
+        <div className="glass-panel p-4 sm:p-6 rounded-3xl space-y-5">
           <div className="flex items-center gap-2 pb-3 border-b border-white/10">
             <Thermometer className="w-5 h-5 text-sky-400" />
             <h2 className="text-base font-bold text-white">Measurement Units</h2>
@@ -300,19 +300,21 @@ export const Settings = () => {
               <p className="text-sm font-semibold text-white">Temperature Scale</p>
               <p className="text-xs text-slate-400">Choose between Celsius or Fahrenheit across all charts and cards</p>
             </div>
-            <div className="flex items-center gap-2 bg-slate-900/80 p-1 rounded-xl border border-white/10">
+            <div className="grid grid-cols-2 gap-1.5 bg-slate-900/80 p-1 rounded-xl border border-white/10 w-full sm:w-auto">
               <button
+                type="button"
                 onClick={() => setTempUnit('C')}
-                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  tempUnit === 'C' ? 'bg-sky-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                className={`py-2 px-3 sm:px-4 rounded-lg text-xs font-bold transition-all text-center ${
+                  tempUnit === 'C' ? 'bg-sky-500 text-slate-950 shadow-md font-extrabold' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 Celsius (°C)
               </button>
               <button
+                type="button"
                 onClick={() => setTempUnit('F')}
-                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  tempUnit === 'F' ? 'bg-sky-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                className={`py-2 px-3 sm:px-4 rounded-lg text-xs font-bold transition-all text-center ${
+                  tempUnit === 'F' ? 'bg-sky-500 text-slate-950 shadow-md font-extrabold' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 Fahrenheit (°F)
@@ -326,13 +328,14 @@ export const Settings = () => {
               <p className="text-sm font-semibold text-white">Wind Speed Unit</p>
               <p className="text-xs text-slate-400">Velocity scale for gusts and atmospheric streams</p>
             </div>
-            <div className="flex items-center gap-2 bg-slate-900/80 p-1 rounded-xl border border-white/10">
+            <div className="grid grid-cols-3 gap-1.5 bg-slate-900/80 p-1 rounded-xl border border-white/10 w-full sm:w-auto">
               {['kmh', 'mph', 'ms'].map((u) => (
                 <button
                   key={u}
+                  type="button"
                   onClick={() => setWindUnit(u)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition-all ${
-                    windUnit === u ? 'bg-sky-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                  className={`py-2 px-3 rounded-lg text-xs font-bold uppercase transition-all text-center ${
+                    windUnit === u ? 'bg-sky-500 text-slate-950 shadow-md font-extrabold' : 'text-slate-400 hover:text-white'
                   }`}
                 >
                   {u}
@@ -347,19 +350,21 @@ export const Settings = () => {
               <p className="text-sm font-semibold text-white">Time Format</p>
               <p className="text-xs text-slate-400">12-Hour AM/PM or 24-Hour International standard</p>
             </div>
-            <div className="flex items-center gap-2 bg-slate-900/80 p-1 rounded-xl border border-white/10">
+            <div className="grid grid-cols-2 gap-1.5 bg-slate-900/80 p-1 rounded-xl border border-white/10 w-full sm:w-auto">
               <button
+                type="button"
                 onClick={() => setTimeFormat('12h')}
-                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  timeFormat === '12h' ? 'bg-sky-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                className={`py-2 px-3 sm:px-4 rounded-lg text-xs font-bold transition-all text-center ${
+                  timeFormat === '12h' ? 'bg-sky-500 text-slate-950 shadow-md font-extrabold' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 12-Hour (AM/PM)
               </button>
               <button
+                type="button"
                 onClick={() => setTimeFormat('24h')}
-                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  timeFormat === '24h' ? 'bg-sky-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                className={`py-2 px-3 sm:px-4 rounded-lg text-xs font-bold transition-all text-center ${
+                  timeFormat === '24h' ? 'bg-sky-500 text-slate-950 shadow-md font-extrabold' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 24-Hour
@@ -369,7 +374,7 @@ export const Settings = () => {
         </div>
 
         {/* 3. Appearance & Theming */}
-        <div className="glass-panel p-6 rounded-3xl space-y-4">
+        <div className="glass-panel p-4 sm:p-6 rounded-3xl space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-white/10">
             <SunMoon className="w-5 h-5 text-amber-400" />
             <h2 className="text-base font-bold text-white">Appearance & Theming</h2>
@@ -381,11 +386,11 @@ export const Settings = () => {
               <p className="text-xs text-slate-400">Toggle between Dark Space & Ambient Daylight styles</p>
             </div>
 
-            <div className="flex items-center gap-2 bg-slate-900/80 p-1.5 rounded-2xl border border-white/10 self-start sm:self-auto">
+            <div className="grid grid-cols-2 gap-1.5 bg-slate-900/80 p-1.5 rounded-2xl border border-white/10 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => theme !== 'dark' && toggleTheme()}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-bold transition-all ${
                   theme === 'dark'
                     ? 'bg-sky-500 text-slate-950 shadow-md font-extrabold'
                     : 'text-slate-400 hover:text-white'
@@ -397,7 +402,7 @@ export const Settings = () => {
               <button
                 type="button"
                 onClick={() => theme !== 'light' && toggleTheme()}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-bold transition-all ${
                   theme === 'light'
                     ? 'bg-amber-400 text-slate-950 shadow-md font-extrabold'
                     : 'text-slate-400 hover:text-white'
@@ -411,21 +416,22 @@ export const Settings = () => {
         </div>
 
         {/* 4. Smart Web Notifications */}
-        <div className="glass-panel p-6 rounded-3xl space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-white/10">
+        <div className="glass-panel p-4 sm:p-6 rounded-3xl space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/10">
             <div className="flex items-center gap-2">
               <Bell className="w-5 h-5 text-indigo-400" />
               <h2 className="text-base font-bold text-white">Smart Notification Triggers</h2>
             </div>
             <button
+              type="button"
               onClick={requestNotificationPermission}
-              className="text-xs font-semibold text-sky-400 hover:underline"
+              className="text-xs font-semibold text-sky-400 hover:underline self-start sm:self-auto"
             >
               Enable Browser Permissions
             </button>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {[
               { id: 'rain', label: 'Rain Early Warning', desc: 'Alert when precipitation probability surges within 30 minutes' },
               { id: 'severeWeather', label: 'Severe Storm & Heatwave Alerts', desc: 'Critical early alerts for gales, cyclones, and extreme temperatures' },
@@ -434,9 +440,9 @@ export const Settings = () => {
             ].map((n) => (
               <label
                 key={n.id}
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-900/50 border border-white/5 cursor-pointer hover:border-white/15 transition-all"
+                className="flex items-center justify-between p-3 sm:p-3.5 rounded-2xl bg-slate-900/50 border border-white/5 cursor-pointer hover:border-white/15 transition-all gap-3"
               >
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs sm:text-sm font-semibold text-white">{n.label}</p>
                   <p className="text-[11px] text-slate-400">{n.desc}</p>
                 </div>
@@ -444,7 +450,7 @@ export const Settings = () => {
                   type="checkbox"
                   checked={notifications[n.id]}
                   onChange={(e) => setNotifications({ ...notifications, [n.id]: e.target.checked })}
-                  className="w-4 h-4 rounded text-sky-500 bg-slate-800 border-white/20 focus:ring-sky-500"
+                  className="w-4 h-4 rounded text-sky-500 bg-slate-800 border-white/20 focus:ring-sky-500 flex-shrink-0"
                 />
               </label>
             ))}
@@ -454,7 +460,7 @@ export const Settings = () => {
         {/* Save Button */}
         <button
           onClick={handleSave}
-          className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-sm transition-all shadow-xl shadow-sky-500/25 flex items-center justify-center gap-2"
+          className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-sm transition-all shadow-xl shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]"
         >
           <ShieldCheck className="w-4 h-4" />
           <span>Save Preferences</span>

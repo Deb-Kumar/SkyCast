@@ -19,7 +19,7 @@ export const PageWrapper = ({ children, hideSidebar = false }) => {
   }
 
   return (
-    <div className={`min-h-screen bg-slate-950 text-slate-100 flex flex-col ${glowClass} transition-colors duration-300 pb-16 md:pb-0`}>
+    <div className={`min-h-screen bg-slate-950 text-slate-100 flex flex-col ${glowClass} transition-colors duration-300 pb-24 md:pb-0`}>
       <Navbar />
       <div className="w-full max-w-[1520px] mx-auto px-3 sm:px-6 lg:px-8 flex-1 flex gap-6">
         {!hideSidebar && <Sidebar />}
@@ -30,4 +30,5 @@ export const PageWrapper = ({ children, hideSidebar = false }) => {
     </div>
   );
 };
+
 
