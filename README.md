@@ -15,7 +15,7 @@
   A state-of-the-art, full-stack atmospheric intelligence and climate decision platform combining hyper-local real-time weather telemetry, multi-model forecasts, interactive radar maps, comprehensive air quality analytics, severe weather alerts, a proprietary <strong>Smart Outdoor Activity Score</strong>, and a context-grounded <strong>Gemini AI Weather Assistant</strong>.
 </p>
 
-[Live Demo](http://localhost:5173) • [API Documentation](#-rest-api-reference) • [Architecture](#-system-architecture) • [Deployment](#-deployment-guide)
+[🌐 Live Production Website](https://sky-cast-sable.vercel.app) • [⚡ Live Backend API](https://skycast-weather-backend.onrender.com/api/health) • [API Documentation](#-rest-api-reference) • [Architecture](#-system-architecture)
 
 </div>
 
