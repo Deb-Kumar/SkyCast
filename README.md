@@ -307,4 +307,4 @@ When a user submits the Contact Us form:
 
 ## 📜 License
 
-This project is licensed under the **MIT License**. Built with ❤️ by **Deb Kumar Payra** and the **SkyCast Meteorological Intelligence Team**.
+This project is licensed under the **MIT License**. Built with ❤️ by **DEV KUMAR** and the **SkyCast Meteorological Intelligence Team**.
