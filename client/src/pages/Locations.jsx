@@ -136,7 +136,7 @@ export const Locations = () => {
   return (
     <PageWrapper>
       <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               Saved Favorite Locations
@@ -146,18 +146,39 @@ export const Locations = () => {
             </p>
           </div>
 
-          <button
-            onClick={handleOpenAddModal}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-sky-500/20 self-start sm:self-auto"
-          >
-            <Plus className="w-4 h-4" />
-            <span>Add Location</span>
-          </button>
+          <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+            <button
+              onClick={handleOpenAddModal}
+              className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-sky-500/20 w-full xs:w-auto"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Add Location</span>
+            </button>
+          </div>
         </div>
 
         {loading ? (
           <div className="min-h-[40vh] flex items-center justify-center">
             <Loader2 className="w-8 h-8 text-sky-400 animate-spin" />
+          </div>
+        ) : locations.length === 0 ? (
+          <div className="glass-panel p-8 sm:p-12 rounded-3xl text-center max-w-lg mx-auto my-6 border border-white/10">
+            <div className="w-16 h-16 rounded-2xl bg-sky-500/15 text-sky-400 border border-sky-500/30 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-sky-500/10">
+              <BookmarkCheck className="w-8 h-8" />
+            </div>
+            <h2 className="text-lg sm:text-xl font-bold text-white mb-2">No Saved Locations Yet</h2>
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+              Bookmark your favorite cities, university campus, or office locations to monitor atmospheric conditions at a glance.
+            </p>
+            <div className="flex justify-center">
+              <button
+                onClick={handleOpenAddModal}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-sky-500/20 w-full xs:w-auto"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Add Your First Location</span>
+              </button>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
