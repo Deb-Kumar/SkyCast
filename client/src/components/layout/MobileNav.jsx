@@ -27,7 +27,6 @@ const PRIMARY_MOBILE_ITEMS = [
   { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
   { name: 'Forecast', path: '/forecast', icon: CalendarDays },
   { name: 'Radar', path: '/map', icon: MapIcon },
-  { name: 'Alerts', path: '/alerts', icon: ShieldAlert, badge: 'Live' },
   { name: 'AI Consult', path: '/ai-weather', icon: Bot, highlight: true }
 ];
 
@@ -54,6 +53,15 @@ const ALL_NAV_ITEMS = [
     category: 'Maps'
   },
   {
+    name: 'Weather Alerts',
+    path: '/alerts',
+    icon: ShieldAlert,
+    desc: 'Automated anomaly & severe storm warnings',
+    category: 'Safety',
+    badge: 'Live',
+    badgeColor: 'rose'
+  },
+  {
     name: 'Air Quality (AQI)',
     path: '/air-quality',
     icon: Wind,
@@ -67,15 +75,6 @@ const ALL_NAV_ITEMS = [
     desc: 'Historical charts, temperature & pressure trends',
     category: 'Insights',
     badge: 'Pro'
-  },
-  {
-    name: 'Weather Alerts',
-    path: '/alerts',
-    icon: ShieldAlert,
-    desc: 'Automated anomaly & severe storm warnings',
-    category: 'Safety',
-    badge: 'Live',
-    badgeColor: 'rose'
   },
   {
     name: 'AI Weather Consult',
@@ -128,6 +127,7 @@ export const MobileNav = () => {
   }, [isMoreOpen]);
 
   const isMoreActive = [
+    '/alerts',
     '/analytics',
     '/locations',
     '/settings',
@@ -144,11 +144,11 @@ export const MobileNav = () => {
           {/* Backdrop Blur */}
           <div
             onClick={() => setIsMoreOpen(false)}
-            className="absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+            className="absolute inset-0 bg-black/75 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
           />
 
           {/* Drawer Content */}
-          <div className="relative w-full max-h-[85vh] overflow-y-auto bg-slate-950/95 border-t border-white/15 rounded-t-3xl shadow-[0_-16px_40px_rgba(0,0,0,0.6)] px-4 pt-4 pb-8 z-10 flex flex-col gap-4 animate-in slide-in-from-bottom-full duration-300">
+          <div className="relative w-full max-h-[85vh] overflow-y-auto bg-slate-950/95 border-t border-white/15 rounded-t-3xl shadow-[0_-16px_40px_rgba(0,0,0,0.6)] px-4 pt-4 pb-10 z-10 flex flex-col gap-4 animate-in slide-in-from-bottom-full duration-300">
             {/* Grab handle */}
             <div className="w-12 h-1.5 bg-slate-700 rounded-full mx-auto mb-1 flex-shrink-0" />
 
@@ -163,7 +163,7 @@ export const MobileNav = () => {
                     SkyCast Navigation
                   </h3>
                   <p className="text-[11px] text-slate-400">
-                    Location: <span className="text-sky-300 font-medium">{activeLocation?.city || 'Selected City'}</span>
+                    Active: <span className="text-sky-300 font-medium">{activeLocation?.city || 'Selected City'}</span>
                   </p>
                 </div>
               </div>
@@ -306,9 +306,9 @@ export const MobileNav = () => {
         </div>
       )}
 
-      {/* Main Fixed Bottom Navigation Bar */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 backdrop-blur-2xl bg-slate-950/95 dark:bg-slate-950/95 border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] px-2 py-1.5 transition-colors">
-        <div className="flex items-center justify-between max-w-lg mx-auto">
+      {/* Main Fixed Bottom Navigation Bar - Perfectly spaced 5 items */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 backdrop-blur-2xl bg-slate-950/95 border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.5)] px-3 py-2 transition-colors">
+        <div className="flex items-center justify-between max-w-md mx-auto">
           {PRIMARY_MOBILE_ITEMS.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
@@ -333,15 +333,12 @@ export const MobileNav = () => {
                   }`}
                 >
                   <Icon className="w-4 h-4" />
-                  {item.badge && !isActive && (
-                    <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-slate-950 animate-pulse" />
-                  )}
                 </div>
                 <span className="text-[10px] font-semibold tracking-tight mt-0.5 whitespace-nowrap">
                   {item.name}
                 </span>
                 {isActive && (
-                  <div className="absolute -bottom-0.5 w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,1)]" />
+                  <div className="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,1)]" />
                 )}
               </NavLink>
             );
@@ -366,14 +363,14 @@ export const MobileNav = () => {
             >
               <Grid className="w-4 h-4" />
               {isMoreActive && (
-                <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-sky-400 ring-2 ring-slate-950" />
+                <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-sky-400 ring-2 ring-slate-950 animate-pulse" />
               )}
             </div>
             <span className="text-[10px] font-semibold tracking-tight mt-0.5 whitespace-nowrap">
               More
             </span>
             {(isMoreOpen || isMoreActive) && (
-              <div className="absolute -bottom-0.5 w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,1)]" />
+              <div className="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,1)]" />
             )}
           </button>
         </div>

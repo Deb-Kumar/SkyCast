@@ -30,20 +30,22 @@ export const Alerts = () => {
   return (
     <PageWrapper>
       <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-center sm:text-left">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h1 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
               Severe Weather Alerts & Warnings • {activeLocation.city}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1">
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
               Automated anomaly detection engine for thunderstorms, heatwaves, cyclones, and hazardous AQI
             </p>
           </div>
 
-          <span className="text-xs font-bold px-3 py-1.5 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/30 flex items-center gap-1.5 self-start sm:self-auto">
-            <span className="w-2 h-2 rounded-full bg-rose-400 animate-ping" />
-            Active Warning Engine
-          </span>
+          <div className="flex justify-center sm:justify-end">
+            <span className="text-xs font-bold px-3 py-1.5 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/30 flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-rose-400 animate-ping" />
+              Active Warning Engine
+            </span>
+          </div>
         </div>
 
         {loading ? (

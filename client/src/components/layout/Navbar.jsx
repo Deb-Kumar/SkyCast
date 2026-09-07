@@ -220,11 +220,11 @@ export const Navbar = () => {
             <span className="max-w-[120px] truncate font-semibold">{activeLocation?.city || 'Your Location'}</span>
           </div>
 
-          {/* AI Weather Quick Action */}
+          {/* AI Weather Quick Action (Desktop & Tablet) */}
           <Link
             to="/ai-weather"
             title="AI Weather Assistant"
-            className="flex items-center gap-1.5 p-2 sm:px-3 sm:py-2 rounded-xl bg-gradient-to-r from-sky-500/20 to-indigo-500/20 hover:from-sky-500/30 hover:to-indigo-500/30 border border-sky-500/40 text-xs font-bold text-sky-300 transition-all shadow-sm flex-shrink-0"
+            className="hidden sm:flex items-center gap-1.5 p-2 sm:px-3 sm:py-2 rounded-xl bg-gradient-to-r from-sky-500/20 to-indigo-500/20 hover:from-sky-500/30 hover:to-indigo-500/30 border border-sky-500/40 text-xs font-bold text-sky-300 transition-all shadow-sm flex-shrink-0"
           >
             <Sparkles className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-sky-300 animate-pulse flex-shrink-0" />
             <span className="hidden sm:inline">AI Pro</span>

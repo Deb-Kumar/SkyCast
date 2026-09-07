@@ -51,7 +51,7 @@ const FOOTER_LINKS = [
 
 export const Footer = () => {
   return (
-    <footer className="w-full border-t border-white/10 mt-auto py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-slate-950/60 backdrop-blur-2xl transition-colors relative z-10">
+    <footer className="w-full border-t border-white/10 mt-auto pt-8 pb-28 sm:pb-24 md:py-10 px-4 sm:px-6 lg:px-8 bg-slate-950/60 backdrop-blur-2xl transition-colors relative z-10">
       <div className="max-w-[1520px] mx-auto space-y-6 sm:space-y-8">
         {/* Main Footer Container */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
